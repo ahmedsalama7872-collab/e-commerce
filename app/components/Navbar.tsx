@@ -46,8 +46,8 @@ export function Navbar() {
 
   return (
     <header className="w-full border-b border-slate-100 bg-white">
-      <div className="hidden border-b border-slate-100 text-xs text-slate-500 md:block">
-        <div className="mx-auto flex max-w-[2300px] items-center justify-between px-[clamp(20px,3vw,56px)] py-2">
+      <div className="hidden border-b border-slate-100 text-sm text-slate-500 md:block">
+        <div className="mx-auto flex max-w-[2300px] items-center justify-between px-[clamp(20px,3vw,56px)] py-3">
           <div className="flex items-center gap-5">
             <span className="flex items-center gap-1.5"><Truck size={15} className="text-emerald-600" />Free Shipping on Orders 500 EGP</span>
             <span className="flex items-center gap-1.5"><Gift size={15} className="text-emerald-600" />New Arrivals Daily</span>
@@ -62,18 +62,18 @@ export function Navbar() {
         </div>
       </div>
 
-      <div className="mx-auto flex max-w-[2300px] items-center gap-[clamp(16px,1.6vw,32px)] px-[clamp(20px,3vw,56px)] py-3">
+      <div className="mx-auto flex max-w-[2300px] items-center gap-[clamp(16px,1.6vw,32px)] px-[clamp(20px,3vw,56px)] py-5">
         <Link href="/" aria-label="FreshCart home" className="shrink-0">
-          <Image src={logo} width={235} height={46} className="h-auto w-[clamp(138px,8vw,190px)]" alt="FreshCart" priority />
+          <Image src={logo} width={235} height={46} className="h-auto w-[clamp(150px,8.5vw,210px)]" alt="FreshCart" priority />
         </Link>
 
-        <form action="/shop" className="hidden h-12 min-w-32 flex-1 items-center rounded-full border border-slate-200 bg-slate-50/70 px-4 text-slate-400 md:flex">
+        <form action="/shop" className="hidden h-14 min-w-32 flex-1 items-center rounded-full border border-slate-200 bg-slate-50/70 px-4 text-slate-400 md:flex">
           <label className="sr-only" htmlFor="site-search">Search products</label>
           <input id="site-search" name="keyword" className="w-full bg-transparent text-sm text-slate-700 outline-none placeholder:text-slate-400" placeholder="Search for products, brands and more..." />
           <button aria-label="Search" className="grid size-9 shrink-0 place-items-center rounded-full bg-emerald-600 text-white hover:bg-emerald-700" type="submit"><Search size={18} /></button>
         </form>
 
-        <nav aria-label="Main navigation" className="hidden items-center gap-[clamp(12px,1vw,20px)] whitespace-nowrap text-[15px] text-slate-700 xl:flex">
+        <nav aria-label="Main navigation" className="hidden items-center gap-[clamp(12px,1vw,20px)] whitespace-nowrap text-[18px] text-slate-700 xl:flex">
           <Link href="/" className="hover:text-emerald-700">Home</Link>
           <Link href="/shop" className="hover:text-emerald-700">Shop</Link>
           <Link href="/categories" className="flex items-center gap-1 hover:text-emerald-700">Categories <ChevronDown size={13} /></Link>
@@ -84,9 +84,9 @@ export function Navbar() {
         </nav>
 
         <div className="ml-auto flex shrink-0 items-center gap-[clamp(12px,1.1vw,20px)] text-slate-600">
-          <Link href="/wishlist" aria-label="Open favorites" className="block hover:text-rose-600"><Heart size={22} strokeWidth={1.7} /></Link>
-          <Link href="/cart" aria-label={`Shopping cart, ${cartCount} items`} className="relative block hover:text-emerald-700"><ShoppingCart size={22} strokeWidth={1.7} />{cartCount > 0 && <span className="absolute -right-2 -top-2 grid min-h-5 min-w-5 place-items-center rounded-full bg-emerald-600 px-1 text-[10px] font-bold leading-none text-white">{cartCount > 99 ? "99+" : cartCount}</span>}</Link>
-          <Link href="/login" className="hidden items-center gap-1.5 rounded-full bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700 xl:flex"><UserRound size={16} />Sign In</Link>
+          <Link href="/wishlist" aria-label="Open favorites" className="block hover:text-rose-600"><Heart size={24} strokeWidth={1.7} /></Link>
+          <Link href="/cart" aria-label={`Shopping cart, ${cartCount} items`} className="relative block hover:text-emerald-700"><ShoppingCart size={24} strokeWidth={1.7} />{cartCount > 0 && <span className="absolute -right-2 -top-2 grid min-h-5 min-w-5 place-items-center rounded-full bg-emerald-600 px-1 text-[10px] font-bold leading-none text-white">{cartCount > 99 ? "99+" : cartCount}</span>}</Link>
+          <Link href="/login" className="hidden items-center gap-1.5 rounded-full bg-emerald-600 px-5 py-3 text-base font-semibold text-white shadow-sm hover:bg-emerald-700 xl:flex"><UserRound size={18} />Sign In</Link>
           <button type="button" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)} className="grid size-9 place-items-center rounded-full bg-emerald-600 text-white xl:hidden">
             {menuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
