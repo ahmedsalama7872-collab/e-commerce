@@ -11,14 +11,14 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
 }
 
 .auth-layout {
-  width: min(100% - clamp(32px, 5vw, 120px), 1720px);
+  width: min(100% - clamp(32px, 5vw, 120px), 1440px);
   min-height: calc(100vh - 136px);
   margin: 0 auto;
-  padding: clamp(44px, 4vw, 88px) 0;
+  padding: clamp(32px, 3vw, 64px) 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
-  gap: clamp(38px, 2.5vw, 64px);
+  gap: clamp(28px, 2vw, 48px);
 }
 
 .auth-welcome {
@@ -43,9 +43,9 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
 
 .auth-welcome h1 {
   max-width: 940px;
-  margin: 34px auto 0;
+  margin: 28px auto 0;
   color: #1d3047;
-  font-size: clamp(27px, 1.8vw, 43px);
+  font-size: clamp(24px, 1.6vw, 36px);
   line-height: 1.2;
   font-weight: 750;
   letter-spacing: -0.025em;
@@ -53,9 +53,9 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
 
 .auth-intro {
   max-width: 860px;
-  margin: 24px auto 0;
+  margin: 18px auto 0;
   color: #53647a;
-  font-size: clamp(16px, 1.15vw, 25px);
+  font-size: clamp(14px, 1vw, 20px);
   line-height: 1.55;
 }
 
@@ -63,8 +63,8 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: clamp(18px, 2.2vw, 48px);
-  margin: 28px 0 0;
+  gap: clamp(16px, 1.8vw, 32px);
+  margin: 20px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -74,7 +74,7 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
   align-items: center;
   gap: 10px;
   color: #526176;
-  font-size: clamp(14px, 0.8vw, 19px);
+  font-size: clamp(12px, 0.7vw, 16px);
   white-space: nowrap;
 }
 
@@ -91,19 +91,19 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
 }
 
 .auth-card {
-  width: min(100%, 830px);
-  padding: clamp(34px, 2.1vw, 54px) clamp(30px, 2.5vw, 64px) 38px;
+  width: min(100%, 700px);
+  padding: clamp(28px, 1.8vw, 44px) clamp(24px, 2vw, 48px) 30px;
   border: 1px solid #f1f2f4;
-  border-radius: 22px;
+  border-radius: 18px;
   background: #fff;
   box-shadow: 0 12px 36px rgb(16 24 40 / 7%);
   color: #24354a;
 }
 
 .auth-cardLogo {
-  margin-bottom: 26px;
+  margin-bottom: 20px;
   color: #1d3047;
-  font-size: clamp(34px, 2.2vw, 51px);
+  font-size: clamp(28px, 1.8vw, 42px);
   line-height: 1;
   font-weight: 750;
   letter-spacing: -0.04em;
@@ -115,42 +115,42 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
 }
 
 .auth-cardHeader {
-  margin-bottom: 38px;
+  margin-bottom: 28px;
   text-align: center;
 }
 
 .auth-cardHeader h2 {
   margin: 0;
   color: #1d3047;
-  font-size: clamp(28px, 1.75vw, 42px);
+  font-size: clamp(24px, 1.5vw, 34px);
   line-height: 1.25;
   font-weight: 730;
 }
 
 .auth-cardHeader p {
-  margin: 14px 0 0;
+  margin: 10px 0 0;
   color: #53647a;
-  font-size: clamp(15px, 1vw, 22px);
+  font-size: clamp(14px, 0.85vw, 18px);
   line-height: 1.5;
 }
 
 .auth-socialButtons {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 18px;
+  gap: 12px;
 }
 
 .auth-socialButton {
   display: flex;
-  min-height: clamp(58px, 3vw, 78px);
+  min-height: clamp(48px, 2.5vw, 62px);
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 14px;
   border: 2px solid #e3e7ec;
-  border-radius: 17px;
+  border-radius: 14px;
   background: #fff;
   color: #344054;
-  font-size: clamp(16px, 1.1vw, 23px);
+  font-size: clamp(14px, 0.95vw, 19px);
   font-weight: 500;
   cursor: pointer;
   transition: background-color 120ms ease, border-color 120ms ease;
@@ -163,7 +163,7 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
 
 .auth-googleMark,
 .auth-facebookMark {
-  font-size: clamp(22px, 1.35vw, 30px);
+  font-size: clamp(19px, 1.15vw, 26px);
   font-weight: 800;
 }
 
@@ -173,23 +173,23 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
 
 .auth-facebookMark {
   display: grid;
-  width: 27px;
-  height: 27px;
+  width: 24px;
+  height: 24px;
   place-items: center;
   border-radius: 50%;
   background: #1877f2;
   color: #fff;
   font-family: Arial, sans-serif;
-  font-size: 21px;
+  font-size: 18px;
 }
 
 .auth-divider {
   display: flex;
   align-items: center;
-  gap: 22px;
-  margin: 38px 0 34px;
+  gap: 16px;
+  margin: 28px 0 24px;
   color: #6c7888;
-  font-size: clamp(13px, 0.85vw, 18px);
+  font-size: clamp(12px, 0.75vw, 16px);
   white-space: nowrap;
 }
 
@@ -203,7 +203,7 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
 
 .auth-form {
   display: grid;
-  gap: 28px;
+  gap: 20px;
 }
 
 .auth-field {
@@ -215,13 +215,13 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .auth-label {
   display: block;
   color: #344054;
-  font-size: clamp(15px, 0.9vw, 19px);
+  font-size: clamp(14px, 0.8vw, 16px);
   font-weight: 550;
 }
 
@@ -232,20 +232,20 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
 .auth-input {
   display: block;
   width: 100%;
-  height: clamp(60px, 3.2vw, 80px);
-  padding: 0 20px;
+  height: clamp(50px, 2.6vw, 64px);
+  padding: 0 16px;
   border: 2px solid #e2e6eb;
-  border-radius: 17px;
+  border-radius: 14px;
   outline: none;
   background: white;
   color: #27364b;
   font: inherit;
-  font-size: clamp(15px, 1vw, 22px);
+  font-size: clamp(14px, 0.85vw, 18px);
   transition: border-color 120ms ease, box-shadow 120ms ease;
 }
 
 .auth-inputWithIcon {
-  padding-left: 58px;
+  padding-left: 48px;
 }
 
 .auth-input::placeholder {
@@ -261,7 +261,7 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
   position: absolute;
   z-index: 1;
   top: 50%;
-  left: 24px;
+  left: 20px;
   transform: translateY(-50%);
   color: #98a2b3;
 }
@@ -271,8 +271,8 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
   top: 50%;
   right: 20px;
   display: grid;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   place-items: center;
   transform: translateY(-50%);
   border: 0;
@@ -321,9 +321,9 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
 .auth-remember {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   color: #42536a;
-  font-size: clamp(14px, 0.9vw, 19px);
+  font-size: clamp(13px, 0.8vw, 16px);
   line-height: 1.5;
   cursor: pointer;
 }
@@ -334,9 +334,9 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
 
 .auth-terms input,
 .auth-remember input {
-  width: 23px;
-  height: 23px;
-  flex: 0 0 23px;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
   margin: 1px 0 0;
   accent-color: #16a34a;
 }
@@ -354,7 +354,7 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
 }
 
 .auth-forgotLink {
-  font-size: clamp(14px, 0.9vw, 19px);
+  font-size: clamp(13px, 0.8vw, 16px);
   white-space: nowrap;
 }
 
@@ -367,16 +367,16 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
 .auth-submit {
   display: flex;
   width: 100%;
-  min-height: clamp(64px, 3.5vw, 82px);
+  min-height: clamp(52px, 2.8vw, 68px);
   align-items: center;
   justify-content: center;
   gap: 10px;
   margin-top: 2px;
   border: 0;
-  border-radius: 16px;
+  border-radius: 14px;
   background: #13a64c;
   color: white;
-  font-size: clamp(18px, 1.15vw, 25px);
+  font-size: clamp(16px, 0.95vw, 20px);
   font-weight: 650;
   cursor: pointer;
   box-shadow: 0 8px 12px rgb(16 24 40 / 10%);
@@ -395,11 +395,11 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
 }
 
 .auth-switchPrompt {
-  margin: 38px 0 0;
-  padding-top: 28px;
+  margin: 28px 0 0;
+  padding-top: 22px;
   border-top: 1px solid #edf0f2;
   color: #53647a;
-  font-size: clamp(15px, 0.95vw, 20px);
+  font-size: clamp(14px, 0.85vw, 18px);
   text-align: center;
 }
 
@@ -413,8 +413,8 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
 .auth-trustStats {
   display: flex;
   justify-content: center;
-  gap: clamp(18px, 2vw, 44px);
-  margin-top: 28px;
+  gap: clamp(16px, 1.7vw, 32px);
+  margin-top: 20px;
   color: #788698;
 }
 
@@ -422,7 +422,7 @@ body { margin: 0; background: #fff; color: #1f2937; font-family: Arial, Helvetic
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: clamp(12px, 0.75vw, 16px);
+  font-size: clamp(11px, 0.7vw, 14px);
   white-space: nowrap;
 }
 
