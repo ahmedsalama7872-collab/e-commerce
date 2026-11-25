@@ -5,3 +5,5 @@ export default function home() {
     <div>page</div>
   )
 }
+
+export default 
