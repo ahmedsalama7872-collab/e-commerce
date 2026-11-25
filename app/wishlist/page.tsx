@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { WishlistPage } from "@/app/components/WishlistPage";
+import { WishlistPage } from "@/app/components/pages/WishlistPage";
 
 export const metadata: Metadata = {
   title: "Favorites | FreshCart",
