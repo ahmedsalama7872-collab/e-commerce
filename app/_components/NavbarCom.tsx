@@ -76,13 +76,15 @@ export function NavbarCom() {
         <nav aria-label="Main navigation" className="hidden items-center gap-[clamp(14px,1.3vw,32px)] text-[clamp(15px,0.9vw,21px)] text-slate-700 xl:flex">
           <Link href="/" className="hover:text-emerald-700">Home</Link>
           <Link href="/shop" className="hover:text-emerald-700">Shop</Link>
-          <Link href="/shop" className="flex items-center gap-1 hover:text-emerald-700">Categories <ChevronDown size={13} /></Link>
+          <Link href="/categories" className="flex items-center gap-1 hover:text-emerald-700">Categories <ChevronDown size={13} /></Link>
           <Link href="/brands" className="hover:text-emerald-700">Brands</Link>
+          <Link href="/orders" className="hover:text-emerald-700">Orders</Link>
+          <Link href="/profile" className="hover:text-emerald-700">Profile</Link>
           <span className="flex items-center gap-3 text-slate-500"><span className="grid size-[clamp(34px,2vw,50px)] place-items-center rounded-full bg-emerald-50 text-emerald-700"><Phone size={19} /></span><span>Support<br />24/7 Help</span></span>
         </nav>
 
         <div className="ml-auto flex shrink-0 items-center gap-[clamp(14px,1.4vw,32px)] text-slate-600">
-          <button type="button" aria-label="Wishlist" className="hidden hover:text-emerald-700 sm:block"><Heart size={25} strokeWidth={1.7} /></button>
+          <Link href="/wishlist" aria-label="Open favorites" className="block hover:text-rose-600"><Heart size={25} strokeWidth={1.7} /></Link>
           <Link href="/cart" aria-label={`Shopping cart, ${cartCount} items`} className="relative block hover:text-emerald-700"><ShoppingCart size={25} strokeWidth={1.7} />{cartCount > 0 && <span className="absolute -right-2 -top-2 grid min-h-5 min-w-5 place-items-center rounded-full bg-emerald-600 px-1 text-[10px] font-bold leading-none text-white">{cartCount > 99 ? "99+" : cartCount}</span>}</Link>
           <Link href="/login" className="hidden items-center gap-2 rounded-full bg-emerald-600 px-[clamp(18px,1.5vw,34px)] py-[clamp(13px,0.9vw,21px)] text-base font-semibold text-white shadow-sm hover:bg-emerald-700 xl:flex xl:text-lg"><UserRound size={19} />Sign In</Link>
           <button type="button" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)} className="grid size-9 place-items-center rounded-full bg-emerald-600 text-white xl:hidden">
@@ -96,8 +98,10 @@ export function NavbarCom() {
           <div className="mx-auto flex max-w-[1280px] flex-col gap-3">
             <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
             <Link href="/shop" onClick={() => setMenuOpen(false)}>Shop</Link>
-            <Link href="/shop" onClick={() => setMenuOpen(false)}>Categories</Link>
+            <Link href="/categories" onClick={() => setMenuOpen(false)}>Categories</Link>
             <Link href="/brands" onClick={() => setMenuOpen(false)}>Brands</Link>
+            <Link href="/profile" onClick={() => setMenuOpen(false)}>Profile</Link>
+            <Link href="/orders" onClick={() => setMenuOpen(false)}>Orders</Link>
             <Link href="/login" onClick={() => setMenuOpen(false)}>Sign In</Link>
             <Link href="/signup" onClick={() => setMenuOpen(false)}>Create an Account</Link>
           </div>

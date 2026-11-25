@@ -11,3 +11,19 @@ export function signUp(input: SignUpInput) {
 export function signIn(input: SignInInput) {
   return apiRequest<AuthResponse>("/auth/signin", { method: "POST", body: JSON.stringify(input) });
 }
+
+export function forgotPasswords(email: string) {
+  return apiRequest<{ statusMsg?: string; message?: string }>("/auth/forgotPasswords", { method: "POST", body: JSON.stringify({ email }) });
+}
+
+export function verifyResetCode(resetCode: string) {
+  return apiRequest<{ status?: string; statusMsg?: string; message?: string }>("/auth/verifyResetCode", { method: "POST", body: JSON.stringify({ resetCode }) });
+}
+
+export function resetPassword(email: string, newPassword: string) {
+  return apiRequest<AuthResponse>("/auth/resetPassword", { method: "PUT", body: JSON.stringify({ email, newPassword }) });
+}
+
+export function changeMyPassword(currentPassword: string, password: string, rePassword: string) {
+  return apiRequest<AuthResponse>("/users/changeMyPassword", { method: "PUT", body: JSON.stringify({ currentPassword, password, rePassword }) });
+}

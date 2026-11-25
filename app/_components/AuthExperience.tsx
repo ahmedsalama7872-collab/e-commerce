@@ -221,7 +221,7 @@ export function AuthExperience({ mode }: { mode: AuthMode }) {
                 autoComplete={isSignup ? "new-password" : "current-password"}
                 showRequired={isSignup}
                 leading={<LockKeyhole className={styles.fieldIcon} size={18} />}
-                labelAfter={!isSignup && <a className={styles.forgotLink} href="mailto:support@freshcart.com?subject=Password%20reset">Forgot Password?</a>}
+                labelAfter={!isSignup && <a className={styles.forgotLink} href="/forgot-password">Forgot Password?</a>}
                 hint={isSignup ? <>
                   <span className={styles.passwordMeta}>Must be at least 8 characters with numbers and symbols</span>
                   {password.length > 0 && <span className={styles.strength}><span className={styles.strengthTrack}><span className={`${styles.strengthFill} ${styles[`strength${passwordStrength}` as keyof typeof styles]}`} /></span><span>{passwordStrength}</span></span>}

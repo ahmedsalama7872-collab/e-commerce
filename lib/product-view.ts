@@ -1,5 +1,14 @@
 import type { ApiProduct } from "./products";
-import type { Product } from "@/app/_components/store-data";
+export type Product = {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  previousPrice?: number;
+  rating: number;
+  image?: string;
+  color: string;
+};
 
 const colors = [
   "from-emerald-100 to-lime-50", "from-rose-100 to-orange-50", "from-violet-100 to-fuchsia-50",
@@ -11,7 +20,7 @@ export function toProduct(product: ApiProduct, index = 0): Product {
   return {
     id: product._id,
     name: product.title,
-    category: product.category?.name ?? "General",
+    category: product.category?.name ?? "",
     price: product.priceAfterDiscount ?? product.price,
     previousPrice: product.priceAfterDiscount ? product.price : undefined,
     rating: product.ratingsAverage ?? 0,

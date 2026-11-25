@@ -1,9 +1,5 @@
-import React from 'react'
+import Home from "../../page";
 
-export default function home() {
-  return (
-    <div>page</div>
-  )
-}
+export const instant = false;
 
-export default 
+export default Home;

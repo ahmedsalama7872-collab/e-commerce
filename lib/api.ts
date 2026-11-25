@@ -1,6 +1,12 @@
 const API_BASE_URL = "https://ecommerce.routemisr.com/api";
 
-type ApiEnvelope<T> = { data?: T; message?: string; statusMsg?: string };
+export type ApiEnvelope<T> = {
+  data?: T;
+  results?: number;
+  metadata?: { currentPage?: number; numberOfPages?: number; limit?: number };
+  message?: string;
+  statusMsg?: string;
+};
 
 export class ApiError extends Error {
   status: number;
@@ -16,7 +22,7 @@ export function getAuthToken() {
   return typeof window === "undefined" ? null : window.localStorage.getItem("freshcart-token");
 }
 
-export async function apiRequest<T>(path: string, options: RequestInit = {}): Promise<T> {
+export async function apiRequestWithMeta<T>(path: string, options: RequestInit = {}): Promise<ApiEnvelope<T> | T> {
   const headers = new Headers(options.headers);
   if (options.body && !headers.has("Content-Type")) headers.set("Content-Type", "application/json");
   const token = getAuthToken();
@@ -32,6 +38,11 @@ export async function apiRequest<T>(path: string, options: RequestInit = {}): Pr
   if (!response.ok) {
     throw new ApiError(body?.message || `Request failed (${response.status})`, response.status);
   }
+  return body as ApiEnvelope<T> | T;
+}
+
+export async function apiRequest<T>(path: string, options: RequestInit = {}): Promise<T> {
+  const body = await apiRequestWithMeta<T>(path, options);
   return (body && typeof body === "object" && "data" in body ? body.data : body) as T;
 }
 

@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, LockKeyhole, MapPin, ShoppingBag } from "lucide-react";
 import { getCart, notifyCartChanged, type CartData } from "@/lib/cart";
-import { createCashOrder, type ShippingAddress } from "@/lib/orders";
+import { createCashOrder, createCheckoutSession, type ShippingAddress } from "@/lib/orders";
 
 const formatPrice = (price: number) => `${Number(price || 0).toLocaleString("en-EG")} EGP`;
 
@@ -15,6 +15,7 @@ export function CheckoutPage() {
   const [error, setError] = useState("");
   const [placedOrderId, setPlacedOrderId] = useState("");
   const [orderPlaced, setOrderPlaced] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState<"cash" | "online">("cash");
 
   const loadCart = useCallback(async () => {
     if (!window.localStorage.getItem("freshcart-token")) {
@@ -51,6 +52,13 @@ export function CheckoutPage() {
     try {
       const cartId = cart._id ?? cart.cartId;
       if (!cartId) throw new Error("We couldn’t find your cart ID. Reload the cart and try again.");
+      if (paymentMethod === "online") {
+        const session = await createCheckoutSession(cartId, window.location.origin);
+        const checkoutUrl = session.session?.url ?? session.url;
+        if (!checkoutUrl) throw new Error("The payment provider did not return a checkout URL.");
+        window.location.assign(checkoutUrl);
+        return;
+      }
       const order = await createCashOrder(cartId, shippingAddress);
       setPlacedOrderId(order._id ?? order.id ?? "");
       setOrderPlaced(true);
@@ -90,7 +98,7 @@ export function CheckoutPage() {
                     <label className="text-xs font-semibold text-slate-700">Postal code<input name="postalCode" required autoComplete="postal-code" placeholder="11511" className="mt-1.5 h-11 w-full rounded-md border border-slate-200 px-3 text-sm font-normal outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100" /></label>
                     <label className="text-xs font-semibold text-slate-700 sm:col-span-2">Phone number<input name="phone" required type="tel" autoComplete="tel" placeholder="01X XXX XXXX" className="mt-1.5 h-11 w-full rounded-md border border-slate-200 px-3 text-sm font-normal outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100" /></label>
                   </div>
-                  <div className="mt-6 rounded-lg border border-emerald-100 bg-emerald-50/70 p-4"><p className="text-sm font-semibold text-slate-800">Payment method</p><p className="mt-1 text-xs text-slate-600">Cash on delivery</p></div>
+                  <fieldset className="mt-6 rounded-lg border border-emerald-100 bg-emerald-50/70 p-4"><legend className="px-1 text-sm font-semibold text-slate-800">Payment method</legend><label className="mt-2 flex items-center gap-2 text-sm"><input type="radio" name="paymentMethod" checked={paymentMethod === "cash"} onChange={() => setPaymentMethod("cash")}/>Cash on delivery</label><label className="mt-2 flex items-center gap-2 text-sm"><input type="radio" name="paymentMethod" checked={paymentMethod === "online"} onChange={() => setPaymentMethod("online")}/>Online payment</label></fieldset>
                   {error && <p className="mt-4 text-sm text-rose-600" role="alert">{error}</p>}
                 </section>
 
