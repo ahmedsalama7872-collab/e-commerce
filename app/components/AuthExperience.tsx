@@ -16,7 +16,6 @@ import {
   Truck,
   UserRound,
 } from "lucide-react";
-import "./AuthExperience.css";
 import { signIn, signUp } from "@/lib/auth";
 import { notifyCartChanged } from "@/lib/cart";
 
