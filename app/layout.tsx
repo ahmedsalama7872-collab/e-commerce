@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { NavbarCom } from "./_components/NavbarCom";
-import { FooterCom } from "./_components/FooterCom";
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "FreshCart | Fresh groceries, delivered",
@@ -15,9 +15,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className="h-full antialiased"
     >
       <body className="flex min-h-full flex-col">
-        <NavbarCom />
+        <Navbar />
         {children}
-        <FooterCom />
+        <Footer />
       </body>
     </html>
   );

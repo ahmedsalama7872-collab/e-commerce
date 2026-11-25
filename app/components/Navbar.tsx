@@ -21,7 +21,7 @@ import { getCart, onCartChanged } from "@/lib/cart";
 
 const logo = "/freshcart-logo.49f1b44d.svg";
 
-export function NavbarCom() {
+export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
 

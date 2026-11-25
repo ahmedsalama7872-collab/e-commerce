@@ -1,2 +1,2 @@
-import { ForgotPasswordFlow } from "@/app/_components/ForgotPasswordFlow";
+import { ForgotPasswordFlow } from "@/app/components/ForgotPasswordFlow";
 export default function ForgotPasswordPage(){ return <ForgotPasswordFlow/>; }

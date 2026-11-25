@@ -16,7 +16,7 @@ const footerGroups = [
   { title: "Legal", links: ["Privacy Policy", "Terms of Service", "Cookie Policy"] },
 ];
 
-export function FooterCom() {
+export function Footer() {
   return (
     <footer className="mt-auto w-full">
       <div className="bg-emerald-50/80">

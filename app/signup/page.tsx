@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AuthExperience } from "@/app/_components/AuthExperience";
+import { AuthExperience } from "@/app/components/AuthExperience";
 
 export const metadata: Metadata = {
   title: "Create an Account | FreshCart",

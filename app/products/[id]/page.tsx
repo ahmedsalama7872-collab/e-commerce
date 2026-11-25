@@ -3,8 +3,8 @@ import { notFound } from "next/navigation";
 import { Star } from "lucide-react";
 import { getProduct, getProductsByCategory, type ApiProduct } from "@/lib/products";
 import { toProduct } from "@/lib/product-view";
-import { ProductCard } from "@/app/_components/ProductCard";
-import { ProductActions } from "@/app/_components/ProductActions";
+import { ProductCard } from "@/app/components/ProductCard";
+import { ProductActions } from "@/app/components/ProductActions";
 
 export const instant = false;
 const price = (value: number) => `${value.toLocaleString("en-EG")} EGP`;

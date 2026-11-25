@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCategory, getSubcategoriesByCategory } from "@/lib/categories";
 import { getProducts } from "@/lib/products";
-import { ProductCard } from "@/app/_components/ProductCard";
+import { ProductCard } from "@/app/components/ProductCard";
 import { toProduct } from "@/lib/product-view";
 
 export const instant = false;

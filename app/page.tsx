@@ -8,8 +8,8 @@ import {
   RotateCcw,
   Truck,
 } from "lucide-react";
-import { ProductCard } from "./_components/ProductCard";
-import { HeroProductSlider } from "./_components/HeroProductSlider";
+import { ProductCard } from "./components/ProductCard";
+import { HeroProductSlider } from "./components/HeroProductSlider";
 import { getCategories } from "@/lib/categories";
 import { getProducts } from "@/lib/products";
 import { toProduct } from "@/lib/product-view";

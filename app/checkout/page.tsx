@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CheckoutPage } from "@/app/_components/CheckoutPage";
+import { CheckoutPage } from "@/app/components/CheckoutPage";
 
 export const metadata: Metadata = {
   title: "Checkout | FreshCart",
