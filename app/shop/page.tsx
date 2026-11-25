@@ -9,7 +9,7 @@ import {
   Search,
   Star,
 } from "lucide-react";
-import { ProductCard } from "../../_components/ProductCard";
+import { ProductCard } from "../_components/ProductCard";
 import { getBrands } from "@/lib/brands";
 import { getCategories } from "@/lib/categories";
 import { toProduct } from "@/lib/product-view";
