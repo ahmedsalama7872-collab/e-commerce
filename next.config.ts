@@ -2,24 +2,20 @@ import type { NextConfig } from "next";
 import withFlowbiteReact from "flowbite-react/plugin/nextjs";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+  trailingSlash: true,
+  basePath: "/e-commerce",
+  env: { NEXT_PUBLIC_BASE_PATH: "/e-commerce" },
   experimental: {
     agentFeedback: true,
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "scontent.fcai19-1.fna.fbcdn.net",
-      },
-      {
-        protocol: "https",
-        hostname: "storage.googleapis.com",
-      },
+      { protocol: "https", hostname: "scontent.fcai19-1.fna.fbcdn.net" },
+      { protocol: "https", hostname: "storage.googleapis.com" },
     ],
   },
-  cacheComponents: true,
-  partialPrefetching: true,
   turbopack: {
     rules: {
       "*.css": {

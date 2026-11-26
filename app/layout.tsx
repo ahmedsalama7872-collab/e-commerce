@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Suspense } from "react";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -16,7 +17,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className="h-full antialiased"
     >
       <body className="flex min-h-full flex-col">
-        <ScrollToTop />
+        <Suspense fallback={null}><ScrollToTop /></Suspense>
         <Navbar />
         {children}
         <Footer />

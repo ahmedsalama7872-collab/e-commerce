@@ -1,1 +1,0 @@
-export default function LoadingBrand(){return <main className="mx-auto min-h-[60vh] max-w-7xl animate-pulse px-4 py-8"><div className="mb-8 h-28 rounded-xl bg-slate-100"/><div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">{Array.from({length:10},(_,i)=><div key={i} className="h-64 rounded-xl bg-slate-100"/>)}</div></main>;}

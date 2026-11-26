@@ -34,7 +34,7 @@ export function Footer() {
         <div className="mx-auto grid max-w-[1280px] grid-cols-2 gap-x-8 gap-y-8 px-5 py-9 md:grid-cols-[1.7fr_repeat(4,1fr)] lg:py-11">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" aria-label="FreshCart home" className="inline-flex rounded bg-white px-2 py-1">
-              <Image src="/freshcart-logo.49f1b44d.svg" width={132} height={26} alt="FreshCart" />
+              <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/freshcart-logo.49f1b44d.svg`} width={132} height={26} alt="FreshCart" />
             </Link>
             <p className="mt-4 max-w-xs text-[11px] leading-5 text-slate-400">FreshCart is your one-stop destination for quality products. From fashion to electronics, we bring you the best brands at competitive prices with a seamless shopping experience.</p>
             <div className="mt-4 space-y-2 text-[11px] text-slate-400">

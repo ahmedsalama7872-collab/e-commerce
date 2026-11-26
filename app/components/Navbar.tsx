@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { getCart, onCartChanged } from "@/lib/cart";
 
-const logo = "/freshcart-logo.49f1b44d.svg";
+const logo = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/freshcart-logo.49f1b44d.svg`;
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -64,10 +64,10 @@ export function Navbar() {
 
       <div className="mx-auto flex max-w-[2300px] items-center gap-[clamp(16px,1.6vw,32px)] px-[clamp(20px,3vw,56px)] py-5">
         <Link href="/" aria-label="FreshCart home" className="shrink-0">
-          <Image src={logo} width={235} height={46} className="h-auto w-[clamp(150px,8.5vw,210px)]" alt="FreshCart" priority />
+          <img src={logo} width={235} height={46} className="h-auto w-[clamp(150px,8.5vw,210px)]" alt="FreshCart" />
         </Link>
 
-        <form action="/shop" className="hidden h-14 min-w-32 flex-1 items-center rounded-full border border-slate-200 bg-slate-50/70 px-4 text-slate-400 md:flex">
+        <form action={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/shop/`} className="hidden h-14 min-w-32 flex-1 items-center rounded-full border border-slate-200 bg-slate-50/70 px-4 text-slate-400 md:flex">
           <label className="sr-only" htmlFor="site-search">Search products</label>
           <input id="site-search" name="keyword" className="w-full bg-transparent text-sm text-slate-700 outline-none placeholder:text-slate-400" placeholder="Search for products, brands and more..." />
           <button aria-label="Search" className="grid size-9 shrink-0 place-items-center rounded-full bg-emerald-600 text-white hover:bg-emerald-700" type="submit"><Search size={18} /></button>

@@ -28,7 +28,7 @@ export function ProductCard({ product, layout = "grid" }: { product: Product; la
   return (
     <article className={`group overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:shadow-lg hover:shadow-slate-900/5 ${layout === "list" ? "flex min-h-40" : "hover:-translate-y-1"}`}>
       <div className={`relative grid shrink-0 place-items-center overflow-hidden bg-gradient-to-br ${product.color} ${layout === "list" ? "w-28 sm:w-40" : "h-48 w-full"}`}>
-      <Link href={`/products/${encodeURIComponent(product.id)}`} aria-label={`View ${product.name}`} className="grid size-full place-items-center">
+      <Link href={`/product?id=${encodeURIComponent(product.id)}`} aria-label={`View ${product.name}`} className="grid size-full place-items-center">
         {product.image ? (
           // Catalog images are supplied by the product data.
           // eslint-disable-next-line @next/next/no-img-element
@@ -40,7 +40,7 @@ export function ProductCard({ product, layout = "grid" }: { product: Product; la
       </div>
       <div className={`min-w-0 flex-1 p-3.5 ${layout === "list" ? "self-center" : ""}`}>
         <p className="text-[10px] font-medium uppercase tracking-wide text-emerald-700">{product.category}</p>
-        <h3 className="mt-1.5 truncate text-sm font-semibold text-slate-800"><Link href={`/products/${encodeURIComponent(product.id)}`} className="hover:text-emerald-700">{product.name}</Link></h3>
+        <h3 className="mt-1.5 truncate text-sm font-semibold text-slate-800"><Link href={`/product?id=${encodeURIComponent(product.id)}`} className="hover:text-emerald-700">{product.name}</Link></h3>
         <div className="mt-2 flex items-center justify-between">
           <div className="flex items-center gap-1 text-amber-500"><Star size={13} fill="currentColor" /><span className="text-xs font-medium text-slate-600">{product.rating.toFixed(1)}</span></div>
           <div className="flex items-baseline gap-1.5"><span className="text-sm font-bold text-slate-900">{product.price.toLocaleString("en-EG")} EGP</span>{product.previousPrice && <del className="text-[10px] text-slate-400">{product.previousPrice.toLocaleString("en-EG")} EGP</del>}</div>

@@ -53,7 +53,7 @@ export function CheckoutPage() {
       const cartId = cart._id ?? cart.cartId;
       if (!cartId) throw new Error("We couldn’t find your cart ID. Reload the cart and try again.");
       if (paymentMethod === "online") {
-        const session = await createCheckoutSession(cartId, window.location.origin);
+        const session = await createCheckoutSession(cartId, `${window.location.origin}${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}`);
         const checkoutUrl = session.session?.url ?? session.url;
         if (!checkoutUrl) throw new Error("The payment provider did not return a checkout URL.");
         window.location.assign(checkoutUrl);
